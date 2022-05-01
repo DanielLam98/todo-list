@@ -51,6 +51,27 @@ nav > section > div > button {
   padding: 2% 0;
 }
 
+.newProjectForm form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.projectInput {
+  width: 90%;
+}
+
+.createProjectBtn {
+  width: 40%;
+}
+.cancelProjectBtn {
+  width: 50%;
+}
+
 .todoList {
   flex-grow: 3;
   height: 100vw;
@@ -76,11 +97,143 @@ nav > section > div > button {
 .newTaskBtn {
   background-color: gray;
   margin: 0 15% 10px 15%;
-  padding: 1px 10px;
+  height: 40px;
   border-radius: 2%;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.currentProjectTasks {
+  background-color: #eee;
+  margin: 0 15% 10px 15%;
+  height: 40px;
+  border-radius: 2%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 1rem;
+  font-size: 1rem;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.taskTitle {
+  margin-right: auto;
 }
 
 .newTaskBtn:hover {
   border: 1px solid black;
+}
+
+.newTodoForm {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.newTodoTitle,
+.pickDate {
+  width: 30%;
+}
+
+.newTodoForm input {
+  height: 80%;
+}
+
+.newTodoForm label {
+  align-self: center;
+}
+
+.urgent {
+  background: red;
+}
+
+.editBtn {
+  border: none;
+  background: none;
+}
+
+.editBtn:hover {
+  color: #ccc;
+}
+
+.deleteBtn {
+  border: none;
+  background: none;
+}
+
+.deleteBtn:hover {
+  color: #ccc;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modalHeader h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modalHeader button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.modalBody {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: all;
+}
+
+.modalBody form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal form div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.modalBody input {
+  text-align: center;
+  margin: 0 auto;
 }
