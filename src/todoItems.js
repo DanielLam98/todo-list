@@ -1,5 +1,7 @@
 import { todoItems } from ".";
 import { editCurrentTask, createModal } from "./editTask";
+import { deleteCurrentTask } from "./deleteTask.js";
+import { setLocalStorage } from ".";
 
 //creates the todoItems
 class todoItem {
@@ -109,7 +111,6 @@ const displayTasks = () => {
   let currentProjectTask = todoItems.filter((result) => {
     return result.project === currentProject.textContent;
   });
-  console.log(currentProjectTask);
   //sorts tasks by oldest to newest
   currentProjectTask.sort(function (a, b) {
     return new Date(a.dueDate) - new Date(b.dueDate);
@@ -145,6 +146,8 @@ const displayTasks = () => {
   }
   //adds event listener to the edit button
   addEditBtnForm();
+  addDeleteBtn();
+  setLocalStorage();
 };
 
 const addEditBtnForm = () => {
@@ -153,6 +156,15 @@ const addEditBtnForm = () => {
     editBtn.addEventListener("click", () => {
       createModal();
       editCurrentTask(editBtn.parentNode.id);
+    });
+  });
+};
+
+const addDeleteBtn = () => {
+  const allDeleteBtns = document.querySelectorAll(".deleteBtn");
+  allDeleteBtns.forEach((deleteBtns) => {
+    deleteBtns.addEventListener("click", () => {
+      deleteCurrentTask(deleteBtns.parentNode.id);
     });
   });
 };

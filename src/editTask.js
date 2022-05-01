@@ -71,7 +71,7 @@ const createModalForm = (
     modalForm.append(inputDiv);
   }
   const editFormBtn = document.createElement("button");
-  editFormBtn.textContent = "Edit Task";
+  editFormBtn.textContent = "Finish";
   modalForm.append(editFormBtn);
   editFormBtn.addEventListener("click", (e) => editTask(e));
 

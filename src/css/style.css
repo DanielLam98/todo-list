@@ -95,7 +95,7 @@ nav > section > div > button {
 }
 
 .newTaskBtn {
-  background-color: gray;
+  background-color: #ccc;
   margin: 0 15% 10px 15%;
   height: 40px;
   border-radius: 2%;
